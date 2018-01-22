@@ -11,7 +11,7 @@ namespace Character2D
         [SerializeField] private LayerMask whatIsGround;
 
         private Transform groundCheck;
-        const float groundedRadius = .2f;
+        const float groundedRadius = .1f;
         private bool grounded;
         private Animator anim;
         private Rigidbody2D rigidbody2D;
