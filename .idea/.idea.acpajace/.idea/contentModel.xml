@@ -28,6 +28,7 @@
           <e p="Orc.cs" t="Include" />
           <e p="OrcAI.cs" t="Include" />
           <e p="OrcMovement.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
           <e p="PlayerControl.cs" t="Include" />
           <e p="StateMachine.cs" t="Include" />
           <e p="TakeDamage.cs" t="Include" />

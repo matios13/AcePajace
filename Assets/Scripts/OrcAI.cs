@@ -43,7 +43,6 @@ public class OrcAI : MonoBehaviour
 			}
 			if (!shouldAttack && seconds == 0)
 			{
-				Debug.Log("Kopytko");
 				shouldAttack = true;
 			}
 //			Debug.Log(seconds);

@@ -42,7 +42,6 @@ public class AttackState : State<OrcAI>
 
 	public override void UpdateState(OrcAI _owner)
 	{
-		Debug.Log("dupa");
 		var deltaX = _owner.transform.localPosition.x - _owner.playerMovement.localPosition.x;
 			if (deltaX < 0)
 			{
