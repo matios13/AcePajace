@@ -10,7 +10,7 @@ namespace Character2D
         [SerializeField] private float jumpForce = 400f;
         [SerializeField] private LayerMask whatIsGround;
 
-        private Transform groundCheck;
+        public Transform groundCheck;
         const float groundedRadius = .1f;
         private bool grounded;
         private Animator anim;

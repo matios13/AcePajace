@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Orc : MonoBehaviour
 {
-
+	
 	public float maxHealth = 100;
 
 	public float currentHealth;
