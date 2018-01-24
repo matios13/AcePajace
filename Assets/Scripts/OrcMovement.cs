@@ -34,8 +34,6 @@ public class OrcMovement : MonoBehaviour {
             if (colliders[i].gameObject != gameObject)
                 grounded = true;
         }
-
-        anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
     }
 
     public void Move(float move, bool jump, int attack)
@@ -70,7 +68,6 @@ public class OrcMovement : MonoBehaviour {
         {
             anim.SetBool("Attack1", false);
             anim.SetBool("Attack2", false);
-            anim.SetBool("Attack3", false);
             switch (attack)
             {
                 case 1:
@@ -78,11 +75,8 @@ public class OrcMovement : MonoBehaviour {
                     cooldown = maxCooldown;
                     break;
                 case 2:
+
                     anim.SetBool("Attack2", true);
-                    cooldown = maxCooldown;
-                    break;
-                case 3:
-                    anim.SetBool("Attack3", true);
                     cooldown = maxCooldown;
                     break;
             }
@@ -103,4 +97,8 @@ public class OrcMovement : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+	public void Die()
+	{
+		rigidbody2D.AddForce(new Vector2(0f, jumpForce*3));
+	}
 }

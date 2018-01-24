@@ -7,7 +7,7 @@ using UnityEngine;
 public class OrcAI : MonoBehaviour
 {
 	public OrcMovement movement;
-	private Orc orc;
+	public Orc orc;
 	public Transform playerMovement;
 	public Transform orcTransform;
 	public bool switchState = false;
@@ -17,7 +17,7 @@ public class OrcAI : MonoBehaviour
 	public float gameTimer;
 	public int seconds = 0;
 	public GameObject player;
-	
+	public int cooldown = 2;
 	private void Awake()
 	{
 		movement = GetComponent<OrcMovement>();
@@ -37,13 +37,10 @@ public class OrcAI : MonoBehaviour
 		{
 			gameTimer = Time.time;
 			seconds++;
-			if(seconds == 2)
-			{
-				seconds = 0;
-			}
-			if (!shouldAttack && seconds == 0)
+			if(seconds == cooldown)
 			{
 				shouldAttack = true;
+				seconds = 0;
 			}
 //			Debug.Log(seconds);
 		}
