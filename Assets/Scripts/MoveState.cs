@@ -44,9 +44,6 @@ public class MoveState : State<OrcAI>
 	public override void UpdateState(OrcAI _owner)
 	{
 		var deltaX = _owner.transform.localPosition.x - _owner.playerMovement.localPosition.x;
-		if (_owner.orc.currentHealth < 1) {
-			_owner.stateMachine.ChangeState (DeadState.Instance);
-		}
 		//Debug.Log(deltaX);
 		if (deltaX < -4)
 		{
@@ -61,7 +58,7 @@ public class MoveState : State<OrcAI>
 		{
 			_owner.movement.Move(0, false, 0);
 		}
-		if (deltaX > 20)
+		if (deltaX > 50)
 		{
 			_owner.stateMachine.ChangeState(WaitState.Instance);
 		} 
@@ -70,14 +67,7 @@ public class MoveState : State<OrcAI>
 			if (_owner.shouldAttack)
 			{
 				_owner.shouldAttack = false;
-				if (_owner.orc.currentHealth < 50) 
-				{
-					_owner.cooldown = 4;
-					_owner.stateMachine.ChangeState (Attack2State.Instance);		
-				} else 
-				{
-					_owner.stateMachine.ChangeState (AttackState.Instance);				
-				}
+				_owner.stateMachine.ChangeState(AttackState.Instance);				
 			}
 		}
 	}
